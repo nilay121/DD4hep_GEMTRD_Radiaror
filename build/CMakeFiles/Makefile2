@@ -54,10 +54,10 @@ RM = /opt/software/linux-debian-x86_64/gcc-11.2.0/cmake-3.21.4-zkiq5ma7qlm65gws4
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/athena
+CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/athena/build
+CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -83,14 +83,14 @@ clean: CMakeFiles/athena.dir/clean
 CMakeFiles/Components_athena.dir/all: CMakeFiles/athena.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Components_athena.dir/build.make CMakeFiles/Components_athena.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Components_athena.dir/build.make CMakeFiles/Components_athena.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nilay/eic/athena_exp/athena/build/CMakeFiles --progress-num=1 "Built target Components_athena"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles --progress-num=1 "Built target Components_athena"
 .PHONY : CMakeFiles/Components_athena.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Components_athena.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Components_athena.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles 0
 .PHONY : CMakeFiles/Components_athena.dir/rule
 
 # Convenience name for target.
@@ -109,14 +109,14 @@ CMakeFiles/Components_athena.dir/clean:
 CMakeFiles/athena.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/athena.dir/build.make CMakeFiles/athena.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/athena.dir/build.make CMakeFiles/athena.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nilay/eic/athena_exp/athena/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target athena"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target athena"
 .PHONY : CMakeFiles/athena.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/athena.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/athena.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles 0
 .PHONY : CMakeFiles/athena.dir/rule
 
 # Convenience name for target.

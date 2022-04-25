@@ -1,6 +1,6 @@
 # Particle gun
 /gps/verbose 1
-/gps/particle pi-
+/gps/particle e-
 /gps/number 1
 
 /gps/ene/mono  6.0 GeV
@@ -20,4 +20,8 @@
 /gps/ang/mintheta  160 degree
 /gps/ang/maxtheta  180 degree
 
-/run/beamOn 20000
+#/tracking/verbose 1
+#/process/verbose 1
+#/particle/verbose 1
+
+/run/beamOn 200000

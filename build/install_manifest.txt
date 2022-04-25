@@ -7,17 +7,14 @@
 /home/nilay/eic/local/share/athena/athena/definitions.xml
 /home/nilay/eic/local/share/athena/athena/ecal_barrel_interlayers.xml
 /home/nilay/eic/local/share/athena/athena/pid_config_canyonlands.xml
-/home/nilay/eic/local/share/athena/athena/radiator.xml
 /home/nilay/eic/local/share/athena/athena/vertex_tracker_3layers.xml
 /home/nilay/eic/local/share/athena/athena/tracking_config_deathvalley.xml
-/home/nilay/eic/local/share/athena/athena/simple_trd (copy).xml
 /home/nilay/eic/local/share/athena/athena/hcal.xml
 /home/nilay/eic/local/share/athena/athena/simple_trd.xml
 /home/nilay/eic/local/share/athena/athena/central_tracker_hybrid_v2.xml
 /home/nilay/eic/local/share/athena/athena/forward_trd.xml
 /home/nilay/eic/local/share/athena/athena/display_detailed.xml
 /home/nilay/eic/local/share/athena/athena/ecal_forward_homogenous.xml
-/home/nilay/eic/local/share/athena/athena/definitions_main.xml
 /home/nilay/eic/local/share/athena/athena/vertex_tracker.xml
 /home/nilay/eic/local/share/athena/athena/pfrich.xml
 /home/nilay/eic/local/share/athena/athena/gem_tracker_endcap.xml
@@ -66,17 +63,14 @@
 /home/nilay/eic/local/share/athena/compact/definitions.xml
 /home/nilay/eic/local/share/athena/compact/ecal_barrel_interlayers.xml
 /home/nilay/eic/local/share/athena/compact/pid_config_canyonlands.xml
-/home/nilay/eic/local/share/athena/compact/radiator.xml
 /home/nilay/eic/local/share/athena/compact/vertex_tracker_3layers.xml
 /home/nilay/eic/local/share/athena/compact/tracking_config_deathvalley.xml
-/home/nilay/eic/local/share/athena/compact/simple_trd (copy).xml
 /home/nilay/eic/local/share/athena/compact/hcal.xml
 /home/nilay/eic/local/share/athena/compact/simple_trd.xml
 /home/nilay/eic/local/share/athena/compact/central_tracker_hybrid_v2.xml
 /home/nilay/eic/local/share/athena/compact/forward_trd.xml
 /home/nilay/eic/local/share/athena/compact/display_detailed.xml
 /home/nilay/eic/local/share/athena/compact/ecal_forward_homogenous.xml
-/home/nilay/eic/local/share/athena/compact/definitions_main.xml
 /home/nilay/eic/local/share/athena/compact/vertex_tracker.xml
 /home/nilay/eic/local/share/athena/compact/pfrich.xml
 /home/nilay/eic/local/share/athena/compact/gem_tracker_endcap.xml
@@ -126,6 +120,4 @@
 /home/nilay/eic/local/share/athena/calibrations/README.md
 /home/nilay/eic/local/share/athena/calibrations/material-maps.json
 /home/nilay/eic/local/share/athena/calibrations/emcal_barrel_calibration.json
-/home/nilay/eic/local/share/athena/calibrations/materials-map.cbor
 /home/nilay/eic/local/share/athena/calibrations/ffi_zdc.json
-/home/nilay/eic/local/share/athena/calibrations/8b21c068916be3c4

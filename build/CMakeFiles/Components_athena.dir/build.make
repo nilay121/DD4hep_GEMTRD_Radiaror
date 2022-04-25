@@ -53,10 +53,10 @@ RM = /opt/software/linux-debian-x86_64/gcc-11.2.0/cmake-3.21.4-zkiq5ma7qlm65gws4
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/athena
+CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/athena/build
+CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build
 
 # Utility rule file for Components_athena.
 
@@ -69,8 +69,8 @@ include CMakeFiles/Components_athena.dir/progress.make
 CMakeFiles/Components_athena: libathena.components
 
 libathena.components: lib/libathena.so
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nilay/eic/athena_exp/athena/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating libathena.components"
-	cd /home/nilay/eic/athena_exp/athena/build/lib && LD_LIBRARY_PATH=/home/nilay/eic/athena_exp/athena/build/lib:/usr/local/lib:/home/nilay/eic/local/lib:/lib/x86_64-linux-gnu:/usr/local/lib64:/usr/local/lib /usr/local/bin/listcomponents_dd4hep -o libathena.components libathena.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating libathena.components"
+	cd /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/lib && LD_LIBRARY_PATH=/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/lib:/usr/local/lib:/home/nilay/eic/local/lib:/lib/x86_64-linux-gnu:/usr/local/lib64:/usr/local/lib /usr/local/bin/listcomponents_dd4hep -o libathena.components libathena.so
 
 Components_athena: CMakeFiles/Components_athena
 Components_athena: libathena.components
@@ -86,6 +86,6 @@ CMakeFiles/Components_athena.dir/clean:
 .PHONY : CMakeFiles/Components_athena.dir/clean
 
 CMakeFiles/Components_athena.dir/depend:
-	cd /home/nilay/eic/athena_exp/athena/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nilay/eic/athena_exp/athena /home/nilay/eic/athena_exp/athena /home/nilay/eic/athena_exp/athena/build /home/nilay/eic/athena_exp/athena/build /home/nilay/eic/athena_exp/athena/build/CMakeFiles/Components_athena.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nilay/eic/athena_exp/RealGemTrdRad/athena /home/nilay/eic/athena_exp/RealGemTrdRad/athena /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles/Components_athena.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Components_athena.dir/depend
 

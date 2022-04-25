@@ -1,4 +1,4 @@
-# Install script for directory: /home/nilay/eic/athena_exp/athena
+# Install script for directory: /home/nilay/eic/athena_exp/RealGemTrdRad/athena
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/home/nilay/eic/athena_exp/athena/build/lib/libathena.components")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/lib/libathena.components")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -53,7 +53,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libathena.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/nilay/eic/athena_exp/athena/build/lib/libathena.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/lib/libathena.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libathena.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libathena.so")
     file(RPATH_CHANGE
@@ -70,19 +70,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/athena" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/athena/compact/" FILES_MATCHING REGEX "/[^/]*\\.xml$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/athena" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/compact/" FILES_MATCHING REGEX "/[^/]*\\.xml$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/compact" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/athena/compact/" FILES_MATCHING REGEX "/[^/]*\\.xml$")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/compact" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/compact/" FILES_MATCHING REGEX "/[^/]*\\.xml$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena" TYPE FILE FILES "/home/nilay/eic/athena_exp/athena/athena.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena" TYPE FILE FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/athena.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/calibrations" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/athena/calibrations/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/athena/calibrations" TYPE DIRECTORY FILES "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/calibrations/")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -93,5 +93,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nilay/eic/athena_exp/athena/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

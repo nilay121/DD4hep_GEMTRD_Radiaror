@@ -13,7 +13,7 @@ v2::libathena.so:athena_DRICH
 v2::libathena.so:athena_EcalBarrel
 v2::libathena.so:athena_EcalBarrelInterlayers
 v2::libathena.so:athena_FakeDIRC
-v2::libathena.so:athena_GEMTrackerEndcap_test
+v2::libathena.so:athena_GEMTrackerEndcap
 v2::libathena.so:athena_GaseousRICH
 v2::libathena.so:athena_HcalBarrel
 v2::libathena.so:athena_MMTrackerBarrel

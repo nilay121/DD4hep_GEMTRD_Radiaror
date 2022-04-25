@@ -57,10 +57,10 @@ RM = /opt/software/linux-debian-x86_64/gcc-11.2.0/cmake-3.21.4-zkiq5ma7qlm65gws4
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/athena
+CMAKE_SOURCE_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/athena/build
+CMAKE_BINARY_DIR = /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles /home/nilay/eic/athena_exp/athena/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/athena/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nilay/eic/athena_exp/RealGemTrdRad/athena/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

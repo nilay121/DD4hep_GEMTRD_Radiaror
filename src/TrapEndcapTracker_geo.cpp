@@ -130,28 +130,6 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
     m_volume.setVisAttributes(description.visAttributes(x_mod.visStr()));
 
     Solid  frame_s;
-    if(x_mod.hasChild("frame")){
-      // build frame from trd (assumed to be smaller)
-      xml_comp_t m_frame         = x_mod.child(_U(frame));
-      xml_comp_t f_pos           = m_frame.child(_U(position));
-      xml_comp_t frame_trd       = m_frame.trd();
-      double     frame_thickness = getAttrOrDefault(m_frame, _U(thickness), total_thickness);
-      double     frame_x1        = frame_trd.x1();
-      double     frame_x2        = frame_trd.x2();
-      double     frame_z         = frame_trd.z();
-      // make the frame match the total thickness if thickness attribute is not given
-      Trapezoid        f_solid1(x1, x2,frame_thickness / 2.0, frame_thickness / 2.0, z);
-      Trapezoid        f_solid(frame_x1, frame_x2, frame_thickness / 2.0, frame_thickness / 2.0, frame_z) ;
-      SubtractionSolid frame_shape(f_solid1, f_solid);
-      frame_s = frame_shape;
-
-      Material f_mat  = description.material(m_frame.materialStr());
-      Volume f_vol(m_nam + "_frame", frame_shape, f_mat);
-      f_vol.setVisAttributes(description.visAttributes(m_frame.visStr()));
-
-      // figure out how to best place
-      pv = m_volume.placeVolume(f_vol, Position(f_pos.x(), f_pos.y(),  f_pos.z()));
-    }
 
     for (ci.reset(), n_sensor = 1, c_id = 0, posY = -y1; ci; ++ci, ++c_id) {
       xml_comp_t c           = ci;
@@ -180,7 +158,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
         sens.setType("tracker");
         c_vol.setSensitiveDetector(sens);
         sensitives[m_nam].push_back(pv);
-        ++n_sensor;
+        //++n_sensor;
         // -------- create a measurement plane for the tracking surface attched to the sensitive volume -----
         Vector3D u(0., 0., -1.);
         Vector3D v(-1., 0., 0.);
@@ -202,6 +180,9 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 
         //--------------------------------------------
       }
+      
+      c_vol.setAttributes(description, c.regionStr(), c.limitsStr(), c.visStr());
+      
       posY += c_thick;
       thickness_sum += c_thick;
       thickness_so_far += c_thick;
@@ -233,16 +214,11 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
     layer_vol.setVisAttributes(description.visAttributes(layer_vis));
 
     PlacedVolume layer_pv;
-    if (reflect) {
-      layer_pv =
-          assembly.placeVolume(layer_vol, Transform3D(RotationZYX(0.0, -M_PI, 0.0), Position(0, 0, -layer_center_z)));
-      layer_pv.addPhysVolID("layer", l_id);
-      layer_name += "_N";
-    } else {
+
       layer_pv = assembly.placeVolume(layer_vol, Position(0, 0, layer_center_z));
       layer_pv.addPhysVolID("layer", l_id);
       layer_name += "_P";
-    }
+    
     DetElement layer_element(sdet, layer_name, l_id);
     layer_element.setPlacement(layer_pv);
 
@@ -278,7 +254,7 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
         if (!reflect) {
           DetElement module(layer_element, m_base + "_pos", det_id);
           pv = layer_vol.placeVolume(
-              m_vol, Transform3D(RotationZYX(0, -M_PI / 2 - phi, -M_PI / 2), Position(x, y, zstart + dz)));
+              m_vol, Transform3D(RotationZYX(0, -M_PI / 2 - phi, -M_PI / 2), Position(x, y, 0.0)));
           pv.addPhysVolID("module", mod_num);
           module.setPlacement(pv);
           for (size_t ic = 0; ic < sensVols.size(); ++ic) {
@@ -290,29 +266,14 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
             comp_elt.addExtension<Acts::ActsExtension>(moduleExtension);
             volSurfaceList(comp_elt)->push_back(volplane_surfaces[m_nam][ic]);
           }
-        } else {
-          pv = layer_vol.placeVolume(
-              m_vol, Transform3D(RotationZYX(0, -M_PI / 2 - phi, -M_PI / 2), Position(x, y, -zstart - dz)));
-          pv.addPhysVolID("module", mod_num);
-          DetElement r_module(layer_element, m_base + "_neg", det_id);
-          r_module.setPlacement(pv);
-          for (size_t ic = 0; ic < sensVols.size(); ++ic) {
-            PlacedVolume sens_pv = sensVols[ic];
-            DetElement   comp_elt(r_module, sens_pv.volume().name(), mod_num);
-            comp_elt.setPlacement(sens_pv);
-        //std::cout << " adding ACTS extension" << "\n";
-            Acts::ActsExtension* moduleExtension = new Acts::ActsExtension("XZY");
-            comp_elt.addExtension<Acts::ActsExtension>(moduleExtension);
-            volSurfaceList(comp_elt)->push_back(volplane_surfaces[m_nam][ic]);
-          }
-        }
+        } 
         dz = -dz;
         phi += iphi;
         ++mod_num;
       }
     }
   }
-  pv = motherVol.placeVolume(assembly,Position(0,0,9.2*cm) );
+  pv = motherVol.placeVolume(assembly,Position(0,0,11.5*cm) );
   pv.addPhysVolID("system", det_id);
   sdet.setPlacement(pv);
   return sdet;
@@ -320,5 +281,4 @@ static Ref_t create_detector(Detector& description, xml_h e, SensitiveDetector s
 
 //@}
 // clang-format off
-//DECLARE_DETELEMENT(athena_TrapEndcapTracker, create_detector)
-DECLARE_DETELEMENT(athena_GEMTrackerEndcap_test, create_detector)
+DECLARE_DETELEMENT(athena_GEMTrackerEndcap, create_detector)

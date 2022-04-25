@@ -11,35 +11,23 @@
     <limits>
 	 <limitset name="SiRegionLimitSet">
             
-               <!--limit name="track_length_max" particles="gamma" value="5.0" unit="mm" /-->
+               <!--limit name="track_length_max" particles="gamma" value="3.0" unit="mm" /-->
                <!--limit name="step_length_max" particles="gamma" value="0.01" unit="mm" /-->
-                <limit name="step_length_max" particles="e[+-]" value="0.1" unit="mm" />
-     		 <limit name="step_length_max" particles="pi[+-]" value="3.0" unit="mm" />
-    		 <limit name="step_length_max" particles="*" value="5.0" unit="mm" />
+                <!--limit name="step_length_max" particles="e[+-]" value="0.1" unit="mm" />
+     		 <limit name="step_length_max" particles="pi[+-]" value="0.1" unit="mm" /-->
+                 <limit name="step_length_max" particles="*" value="0.5" unit="mm" />
     		  <limit name="ekin_min"         particles="*" value="0.01" unit="MeV" />
+    		  <limit name="track_length_max" particles="pi-" value="5.0" unit="mm" />
     		  
-    	     <cut particles="e-" value="1.0" unit="mm" />
-	     <cut particles="e+" value="1.0" unit="mm" />
-	     <cut particles="gamma" value="1.0" unit="mm" />
         </limitset>
         
        <limitset name="RadiatorLimitSet">
-                 <limit name="step_length_max" particles="e[+-]" value="0.1" unit="mm" />
-     		 <limit name="step_length_max" particles="pi[+-]" value="3.0" unit="mm" />
-    		 <limit name="step_length_max" particles="*" value="5.0" unit="mm" />
+		 <limit name="step_length_max" particles="*" value="0.5" unit="mm" />
     		 <limit name="ekin_min"         particles="*" value="0.01" unit="MeV" />
-    		 
-       <!--	 <limit name="step_length_max" particles="e[+-]" value="1.0" unit="mm" />
-     		 <limit name="step_length_max" particles="pi[+-]" value="20.0" unit="mm" />
-    		 <limit name="step_length_max" particles="*" value="5.0" unit="mm" />
-    		 
-	      <limit name="time_max"         particles="*" value="5.0" unit="ns" />
-	      <limit name="ekin_min"         particles="*" value="0.01" unit="keV" />
-	      <limit name="range_min"        particles="*" value="5.0" unit="mm" />-->
 	      
-	     <cut particles="e-" value="1.0" unit="mm" />
+	     <cut particles="e-" value="0.1" unit="mm" />
 	     <cut particles="e+" value="1.0" unit="mm" />
-	     <cut particles="gamma" value="1.0" unit="mm" />
+	     <cut particles="gamma" value="3.0" unit="mm" />
         </limitset>
     </limits>
 
@@ -53,24 +41,25 @@
     </regions>
 
     <detectors>
-        <detector id="1" name="radiator" type="DD4hep_BoxSegment" vis="VisibleGreen" region="RadRegion" limits="RadiatorLimitSet">
-            <material name="radiatorMatCustom"/>
-            <box      x="150*mm" y="150*mm" z="150*mm"/>
-            <position x="0"  y="0"  z="30*cm"/>
-            <rotation x="0"  y="0" z="0"/>
-        </detector>
-        <detector id="2" name="gem_trd" type="DD4hep_BoxSegment" readout="gem_trd" vis="VisibleRed" sensitive="true" region="SiRegion" limits="SiRegionLimitSet">
-            <material name="Xe20CO2"/>
-            <sensitive type="tracker"/>
-            <box      x="200*mm" y="200*mm" z="30*mm"/>
-            <position x="0" y="0"     z="51*cm"/>
-            <rotation x="0" y="0" z="0"/>
-        </detector>
-    </detectors>
-
+     
+	   <detector name="Radiator" type="DD4hep_PolyconeSupport" vis="VisibleGreen" region="RadRegion" limits="RadiatorLimitSet">
+	    <material name="radiatorMatCustom"/>
+	    <zplane rmin="180.*mm" rmax="2500*mm" z="550*cm" />
+	    <zplane rmin="180.*mm" rmax="2500*mm" z="565*cm" />
+	  </detector>
+	  
+	  <detector name="GEMModule" type="DD4hep_PolyconeSupport" vis="VisibleBlue" region="SiRegion" limits="SiRegionLimitSet"        		sensitive="true" readout="gem_trd">
+	    <material name="Xe20CO2"/>
+	    <sensitive type="tracker"/>
+	    <zplane rmin="180.*mm" rmax="2000*mm" z="565*cm" />
+	    <zplane rmin="180.*mm" rmax="2000*mm" z="568*cm" />
+	  </detector>
+	  
+     </detectors>
+    
     <readouts>
-    <readout name="gem_trd">
-      <id>system:8</id>
+    	<readout name="gem_trd">
+      		<id>system:8</id>
         </readout>
     </readouts>
 
